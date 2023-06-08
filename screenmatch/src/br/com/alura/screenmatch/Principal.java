@@ -1,14 +1,19 @@
 package br.com.alura.screenmatch;
 
 import br.com.alura.screnmatch.calculos.CalculadoraDeTempo;
+import br.com.alura.screnmatch.calculos.FiltroDeRecomendação;
 
 public class Principal {
+	
+
 	public static void main(String[] args) {
 		
 		Filme filme = new Filme();
 		Serie serie = new Serie();
 		
-		serie.setNome("Lost");
+	
+		
+		serie.setNome("lost");
 		serie.setAnoDeLancamento(2000);
 		serie.avalia(9);
 		serie.avalia(7);
@@ -57,6 +62,19 @@ public class Principal {
 		calculadora.inclue(outroFilme);
 		System.out.println("");
 		System.out.println("Tempo total dos filmes "+calculadora.getTempoTotal());
+		System.out.println("");
+		
+		
+		FiltroDeRecomendação filtro = new FiltroDeRecomendação();
+		filtro.filtra(filme);
+		
+		Episodio episodio = new Episodio();
+		episodio.setNumero(1);
+		episodio.setSerie(serie);
+		episodio.setTotalVisualizacoes(300);
+		System.out.println("");
+		
+		filtro.filtra(episodio);
 		
 	}
 
